@@ -27,6 +27,7 @@ var is_attacking: bool = false
 var attack_cooldown: float = 0.0
 var hitbox_cooldown: float = 0.0
 var ritual_cooldown: float = 0.0
+var attack_count: int = 1
 
 
 signal meat_collected(value: int)
@@ -48,7 +49,7 @@ func _process(delta: float) -> void:
 	# Processar ataque
 	update_attack_cooldown(delta)
 	if Input.is_action_just_pressed("attack"):
-		attack()
+		attack(input_vector)
 	
 	# Processar animação e rotação de sprite
 	play_run_idle_animation()
@@ -131,12 +132,54 @@ func rotate_sprite() -> void:
 		sprite.flip_h = true
 
 
-func attack() -> void:
+func attack(input_vector: Vector2) -> void:
 	if is_attacking:
 		return
+	#Checa se o Y é maior ou menor que o X
+	var module_y: float
+	if input_vector.y < 0:
+		module_y = input_vector.y * (-1)
+	else:
+		module_y = input_vector.y
+	var module_x: float
+	if input_vector.x < 0:
+		module_x = input_vector.x * (-1)
+	else:
+		module_x = input_vector.x
 	
-	# Tocar animação
-	animation_player.play("attack_side_1")
+	var attack_direction
+	#Calculo do x ou y
+	if module_y > module_x:
+		attack_direction = "Y"
+	else:
+		attack_direction = "X"
+	
+	# Escolhe animação
+	var even = attack_count % 2
+	
+	#Toca animação
+	
+	if attack_direction == "Y" && input_vector.y < 0:
+		if even == 0:
+			animation_player.play("attack_up_1")
+			attack_count += 1
+		else:
+			animation_player.play("attack_up_2")
+			attack_count += 1
+	elif attack_direction == "Y":
+		if even == 0:
+			animation_player.play("attack_down_1")
+			attack_count +=1
+		else:
+			animation_player.play("attack_down_2")
+			attack_count +=1
+	else:
+		if even == 0:
+			animation_player.play("attack_side_1")
+			attack_count += 1
+		else:
+			animation_player.play("attack_side_2")
+			attack_count += 1
 	
 	# Configurar temporizador
 	attack_cooldown = 0.6
@@ -207,6 +250,7 @@ func die() -> void:
 		get_parent().add_child(death_object)
 	
 	print("Player morreu!")
+	attack_count = 0
 	queue_free()
 
 

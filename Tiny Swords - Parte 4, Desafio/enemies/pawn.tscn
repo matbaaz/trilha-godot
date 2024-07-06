@@ -62,7 +62,7 @@ radius = 15.0
 [node name="Pawn" type="CharacterBody2D" groups=["enemies"]]
 motion_mode = 1
 script = ExtResource("1_rryym")
-health = 3
+health = 4
 death_prefab = ExtResource("2_deuqp")
 drop_items = Array[PackedScene]([ExtResource("3_7uwg5")])
 
