@@ -23,6 +23,7 @@ func _process(delta: float):
 	time_elapsed_string = "%02d:%02d" % [minutes, seconds]
 
 
+
 func end_game():
 	if is_game_over: return
 	is_game_over = true

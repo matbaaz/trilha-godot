@@ -1,0 +1,142 @@
+[gd_scene load_steps=21 format=3 uid="uid://bupmy8mcqedo2"]
+
+[ext_resource type="Script" path="res://misc/gold_barrel.gd" id="1_kie03"]
+[ext_resource type="Texture2D" uid="uid://chyv0tt3iouyo" path="res://addons/Tiny Swords/Factions/Goblins/Troops/Barrel/Yellow/Barrel_Yellow.png" id="2_r80y7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24e5a"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e02fx"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmaav"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0tru"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqrgv"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(512, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs5ej"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(640, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76ff1"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otva2"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41fpw"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gybsl"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(256, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mleg5"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(384, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sueth"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(512, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g30oc"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(640, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvmwj"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(0, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qt1u"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(128, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbu3r"]
+atlas = ExtResource("2_r80y7")
+region = Rect2(256, 512, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dm4k1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24e5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e02fx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmaav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0tru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqrgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs5ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76ff1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otva2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41fpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gybsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mleg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sueth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g30oc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvmwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qt1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbu3r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kbugn"]
+radius = 21.0
+height = 66.0
+
+[node name="GoldBarrel" type="Node2D"]
+script = ExtResource("1_kie03")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dm4k1")
+autoplay = "default"
+frame = 15
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_kbugn")

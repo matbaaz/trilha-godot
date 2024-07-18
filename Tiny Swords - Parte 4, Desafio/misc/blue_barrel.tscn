@@ -1,0 +1,148 @@
+[gd_scene load_steps=22 format=3 uid="uid://bm0wtox4fcu7h"]
+
+[ext_resource type="Texture2D" uid="uid://digvfephf10bt" path="res://addons/Tiny Swords/Factions/Goblins/Troops/Barrel/Blue/Barrel_Blue.png" id="1_2sa07"]
+[ext_resource type="Script" path="res://misc/blue_barrel.gd" id="1_h2wct"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpohg"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qwis"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dgfw"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iby76"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhum6"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hbq0"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(512, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrydw"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(640, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcduq"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ybth"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5oba"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbgtu"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(256, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2emx8"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(384, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1um3"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(512, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8esc7"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(640, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4redb"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(0, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihuv4"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(128, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htri6"]
+atlas = ExtResource("1_2sa07")
+region = Rect2(256, 512, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tkqaw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpohg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qwis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dgfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iby76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhum6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hbq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrydw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcduq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ybth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5oba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbgtu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2emx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1um3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8esc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4redb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihuv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htri6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4bdqj"]
+radius = 26.0
+height = 64.0
+
+[node name="BlueBarrel" type="Node2D"]
+script = ExtResource("1_h2wct")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tkqaw")
+autoplay = "default"
+frame_progress = 0.912301
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_4bdqj")

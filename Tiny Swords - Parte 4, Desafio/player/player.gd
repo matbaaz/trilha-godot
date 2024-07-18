@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export_category("Movement")
 @export var speed: float = 3
 @export_category("Sword")
-@export var sword_damage: int = 2
+@export var sword_damage: int = 1
 @export_category("Ritual")
 @export var ritual_damage: int = 1
 @export var ritual_interval: float = 30
@@ -196,10 +196,36 @@ func deal_damage_to_enemies() -> void:
 			
 			var direction_to_enemy = (enemy.position - position).normalized()
 			var attack_direction: Vector2
-			if sprite.flip_h:
-				attack_direction = Vector2.LEFT
+			
+			#Checa se o Y é maior ou menor que o X
+			var module_y: float
+			if input_vector.y < 0:
+				module_y = input_vector.y * (-1)
 			else:
-				attack_direction = Vector2.RIGHT
+				module_y = input_vector.y
+			var module_x: float
+			if input_vector.x < 0:
+				module_x = input_vector.x * (-1)
+			else:
+				module_x = input_vector.x
+			
+			var attack_direction_angle
+			#Calculo do x ou y
+			if module_y > module_x:
+				attack_direction_angle = "Y"
+			else:
+				attack_direction_angle = "X"
+			
+			if attack_direction_angle == "X":
+				if sprite.flip_h:
+					attack_direction = Vector2.LEFT
+				else:
+					attack_direction = Vector2.RIGHT
+			else:
+				if input_vector.y > 0:
+					attack_direction = Vector2.DOWN
+				else:
+					attack_direction = Vector2.UP
 			var dot_product = direction_to_enemy.dot(attack_direction)
 			if dot_product >= 0.3:
 				enemy.damage(sword_damage)
