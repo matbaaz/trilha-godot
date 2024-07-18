@@ -14,6 +14,19 @@ var damage_digit_prefab: PackedScene
 @export var drop_chances: Array[float]
 
 
+var timer: float = 0.0
+
+func _process(delta):
+	timer += delta
+	if timer >= 60:
+		increase(timer)
+		timer = 0.0
+
+
+func increase(timer: float):
+	print(timer)
+	health = health * 2
+
 func _ready():
 	damage_digit_prefab = preload("res://misc/damage_digit.tscn")
 
