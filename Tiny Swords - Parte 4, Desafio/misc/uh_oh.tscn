@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb6rp3hfd7446"]
+
+[ext_resource type="AudioStream" uid="uid://dbch2aqfm3uuq" path="res://addons/Sounds/e-oh-91679.mp3" id="1_00brs"]
+
+[node name="UhOh" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_00brs")
