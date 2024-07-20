@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://bde0jlck61cdp"]
+[gd_scene load_steps=21 format=3 uid="uid://bde0jlck61cdp"]
 
 [ext_resource type="Texture2D" uid="uid://drlap5nxx8qde" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_bn7ai"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_cdtk4"]
 [ext_resource type="PackedScene" uid="uid://b6wsg8q4fpus6" path="res://misc/ritual.tscn" id="2_2ndn7"]
 [ext_resource type="PackedScene" uid="uid://3urxvd4swjei" path="res://misc/big_skull.tscn" id="2_w7but"]
+[ext_resource type="AudioStream" uid="uid://dgc6v3i0mqx6f" path="res://addons/Sounds/sword-sound-2-36274.mp3" id="5_07mj5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ioypi"]
 radius = 14.0357
@@ -52,6 +53,18 @@ tracks/1/keys = {
 "method": &"deal_damage_to_enemies"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_rq5xi"]
 resource_name = "attack_down_2"
@@ -81,6 +94,18 @@ tracks/1/keys = {
 "args": [],
 "method": &"deal_damage_to_enemies"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_fjhb6"]
@@ -112,6 +137,18 @@ tracks/1/keys = {
 "method": &"deal_damage_to_enemies"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_wwpfo"]
 resource_name = "attack_side_2"
@@ -141,6 +178,18 @@ tracks/1/keys = {
 "args": [],
 "method": &"deal_damage_to_enemies"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_cy481"]
@@ -172,6 +221,18 @@ tracks/1/keys = {
 "method": &"deal_damage_to_enemies"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_m8i1l"]
 resource_name = "attack_up_2"
@@ -201,6 +262,18 @@ tracks/1/keys = {
 "args": [],
 "method": &"deal_damage_to_enemies"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_jk33w"]
@@ -312,3 +385,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_1j1rf")
 value = 75.0
 rounded = true
 show_percentage = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_07mj5")

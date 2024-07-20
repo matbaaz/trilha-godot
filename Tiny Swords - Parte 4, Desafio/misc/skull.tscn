@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ry1pj6uph82y"]
+[gd_scene load_steps=6 format=3 uid="uid://ry1pj6uph82y"]
 
 [ext_resource type="Texture2D" uid="uid://bltx3tdl7esn5" path="res://addons/Tiny Swords/Factions/Knights/Troops/Dead/Dead.png" id="1_fhrfi"]
+[ext_resource type="AudioStream" uid="uid://dbch2aqfm3uuq" path="res://addons/Sounds/e-oh-91679.mp3" id="2_6idfa"]
 
 [sub_resource type="Animation" id="Animation_cy8nr"]
 length = 0.001
@@ -46,6 +47,18 @@ tracks/1/keys = {
 "method": &"queue_free"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bw5yc"]
 _data = {
@@ -64,3 +77,6 @@ libraries = {
 "": SubResource("AnimationLibrary_bw5yc")
 }
 autoplay = "default"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_6idfa")

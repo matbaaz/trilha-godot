@@ -15,7 +15,6 @@ var damage_digit_prefab: PackedScene
 
 
 var timer: float = 0.0
-var death_sound: AudioStreamPlayer2D
 
 
 func _process(delta):
@@ -31,7 +30,6 @@ func increase(timer: float):
 
 func _ready():
 	damage_digit_prefab = preload("res://misc/damage_digit.tscn")
-	death_sound = %Sound
 
 
 func damage(amount: int) -> void:
@@ -73,8 +71,6 @@ func die() -> void:
 	# Incrementar contador
 	GameManager.monsters_defeated_counter += 1
 	
-	#UhOh Sound
-	death_sound.set_autoplay = true
 	
 	# Deletar node
 	queue_free()
@@ -109,10 +105,3 @@ func get_random_drop_item() -> PackedScene:
 		needle += drop_chance
 	
 	return drop_items[0]
-	
-	
-	
-	
-	
-	
-	

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6wsg8q4fpus6"]
+[gd_scene load_steps=11 format=3 uid="uid://b6wsg8q4fpus6"]
 
 [ext_resource type="Script" path="res://misc/ritual.gd" id="1_jco7j"]
 [ext_resource type="Texture2D" uid="uid://c0oaf3onb085f" path="res://addons/Kenney's Particle Pack/circle_03.png" id="1_ltmoo"]
 [ext_resource type="Texture2D" uid="uid://cx3ql4whiop83" path="res://addons/Kenney's Particle Pack/light_02.png" id="2_07e4j"]
 [ext_resource type="Texture2D" uid="uid://twgif6i3eeey" path="res://addons/Kenney's Particle Pack/magic_02.png" id="3_hphou"]
+[ext_resource type="AudioStream" uid="uid://boysg0knfnura" path="res://addons/Sounds/electronic-pulses-43135.mp3" id="5_hodt1"]
 
 [sub_resource type="Animation" id="Animation_amtmy"]
 length = 0.001
@@ -171,6 +172,18 @@ tracks/6/keys = {
 "method": &"queue_free"
 }]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6ein6"]
 _data = {
@@ -218,3 +231,6 @@ texture = ExtResource("3_hphou")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_0jsx3")
 debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_hodt1")
