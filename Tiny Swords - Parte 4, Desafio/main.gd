@@ -19,3 +19,7 @@ func trigger_game_over():
 	# Criar GameOverUI
 	var game_over_ui: GameOverUI = game_over_ui_template.instantiate()
 	add_child(game_over_ui)
+
+
+func _on_audio_stream_player_2d_finished():
+	$Background.play(0.0)
